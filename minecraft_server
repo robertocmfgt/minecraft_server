@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  minecraft-server:
+    image: itzg/minecraft-server
+    ports:
+      - "25443:25443"
+    environment:
+      EULA: true
+      SERVER_NAME: "My Minecraft Server"
+      MAX_PLAYERS: 20
+      LEVEL_TYPE: normal
+      DIFFICULTY: easy
+    volumes:
+      - minecraft-data:/data
+
+volumes:
+  minecraft-data:
